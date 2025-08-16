@@ -24,3 +24,19 @@ spec:
       containers:
       - name: mysql
         image: durga98/mysql:1.0.0
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: mysql
+  namespace: expense
+spec:
+  selector: #Lables are used as selectors
+    app: mysql
+    tier: database
+    project: expense
+  ports:
+    - protocol: TCP
+      port: 80 #service port # Can be anything
+      targetPort: 3306 # Madatory as it's mysql
