@@ -38,5 +38,5 @@ spec:
     project: expense
   ports:
     - protocol: TCP
-      port: 80 #service port # Can be anything
+      port: 3306 #service port # Can be anything
       targetPort: 3306 # Madatory as it's mysql
